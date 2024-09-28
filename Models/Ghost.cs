@@ -2,13 +2,13 @@
 
 namespace W5_assignment_template.Models
 {
-    public class Ghost : IEntity
+    public class Ghost(string Name) : IEntity, IFlyable
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = Name;
 
-        public void Attack(IEntity target)
+        public void Attack(IEntity entity)
         {
-            Console.WriteLine($"{Name} attacks {target.Name} with a chilling touch.");
+            Console.WriteLine($"{Name} attacks {entity.Name} with a chilling touch.");
         }
 
         public void Move()
